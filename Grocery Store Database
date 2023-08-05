@@ -1,0 +1,57 @@
+--Create Grocery Store Database
+
+CREATE TABLE Store (id INTEGER PRIMARY KEY, Item TEXT, Section TEXT, Price INTEGER, QTY_OnHand INTEGER);
+
+INSERT INTO Store VALUES (1, "Pineapple", "Produce", 2.99, 8);
+INSERT INTO Store VALUES (2, "Chicken_Thighs", "Meat", 8.99, 15);
+INSERT INTO Store VALUES (3, "Granola", "Snacks", 5.99, 12);
+INSERT INTO Store VALUES (4, "Strawberries", "Produce", 4.99, 10);
+INSERT INTO Store VALUES (5, "Brown Rice", "Bulk", 2.99, 25);
+INSERT INTO Store VALUES (6, "Oat Milk", "Dairy", 4.99, 4);
+INSERT INTO Store VALUES (7, "Eggs", "Dairy", 6.99, 7);
+Insert INTO Store VALUES (8, "Plantain", "Produce", .79, 9);
+INSERT INTO Store VALUES (9, "Asparagus", "Produce", 3.99, 8);
+INSERT INTO Store VALUES (10, "Black Beans", "Bulk", 1.99, 17);
+INSERT INTO Store VALUES (11, "Ground Bison", "Meat", 11.99, 13);
+INSERT INTO Store VALUES (12, "Probiotic", "Health/Beauty", 25.99, 4);
+INSERT INTO Store VALUES (13, "Frozen Fruit bars", "Frozen", 3.99, 6);
+INSERT INTO Store VALUES (14, "Smoothie Berries", "Frozen", 12.99, 5);
+INSERT INTO Store VALUES (15, "Oat Creamer", "Dairy", 4.99, 3);
+SELECT * FROM Store;
+
+
+
+--Display the data by average dairy price
+
+SELECT AVG(price) "Ave Dairy Price"
+FROM store
+where section='Dairy'; 
+
+
+
+--Display the data in order of price
+
+SELECT * FROM Store
+ORDER BY Price;
+
+
+
+--Which items do we have less than 10 on hand? 
+
+SELECT item, qty_onhand
+FROM store
+WHERE qty_onhand < 10
+ORDER BY qty_onhand;
+
+
+
+--What is the average price of items in store? 
+
+SELECT AVG(Price) "Store Average Price" FROM Store;
+
+
+
+--Sort items by section 
+
+SELECT * FROM Store
+ORDER BY Section;
