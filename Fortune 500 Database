@@ -71,7 +71,7 @@ SELECT industry, AVG(avg_employee_tenure) as tenure
 FROM fortune_companies
 GROUP BY industry
 HAVING tenure>=6
-ORDER BY tenure DESC
+ORDER BY tenure DESC;
 
 /*Label companies in Technology by 'large' 'midsize' 'small' based on number of employees */
 SELECT
@@ -82,8 +82,8 @@ CASE
   ELSE 'small'
 END as company_size
 FROM fortune_companies
-WHERE industry='Technology'
+WHERE industry='Technology';
 
 /*Which company has the most days paid time off?*/
 SELECT company_name, MAX(paid_time_off_days) AS PTO
-FROM fortune_companies
+FROM fortune_companies;
